@@ -8,7 +8,7 @@ from frappe.model.document import Document
 
 class HoldPermissions(Document):
 	def autoname(self):
-		name = self.document
+		self.name = self.document
 
 @frappe.whitelist()
 def get_roles(docname):
