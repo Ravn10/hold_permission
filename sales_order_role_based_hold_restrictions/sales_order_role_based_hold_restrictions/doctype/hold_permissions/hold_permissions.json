@@ -1,0 +1,49 @@
+{
+ "autoname": "field:document",
+ "creation": "2020-12-09 16:02:58.172115",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document",
+  "allow_to_roles"
+ ],
+ "fields": [
+  {
+   "fieldname": "document",
+   "fieldtype": "Link",
+   "label": "Document",
+   "options": "DocType",
+   "unique": 1
+  },
+  {
+   "fieldname": "allow_to_roles",
+   "fieldtype": "Table MultiSelect",
+   "label": "Allow to Roles",
+   "options": "Role List"
+  }
+ ],
+ "modified": "2020-12-09 16:04:39.054637",
+ "modified_by": "Administrator",
+ "module": "Sales Order Role Based Hold Restrictions",
+ "name": "Hold Permissions",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

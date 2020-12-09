@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include sales_order_role_based_hold_restrictions *.css
+recursive-include sales_order_role_based_hold_restrictions *.csv
+recursive-include sales_order_role_based_hold_restrictions *.html
+recursive-include sales_order_role_based_hold_restrictions *.ico
+recursive-include sales_order_role_based_hold_restrictions *.js
+recursive-include sales_order_role_based_hold_restrictions *.json
+recursive-include sales_order_role_based_hold_restrictions *.md
+recursive-include sales_order_role_based_hold_restrictions *.png
+recursive-include sales_order_role_based_hold_restrictions *.py
+recursive-include sales_order_role_based_hold_restrictions *.svg
+recursive-include sales_order_role_based_hold_restrictions *.txt
+recursive-exclude sales_order_role_based_hold_restrictions *.pyc
