@@ -1,5 +1,4 @@
 {
- "autoname": "field:document",
  "creation": "2020-12-09 16:02:58.172115",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -11,10 +10,9 @@
  "fields": [
   {
    "fieldname": "document",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Document",
-   "options": "DocType",
-   "unique": 1
+   "options": "Sales Order\nSales Invoice\nPurchase Order"
   },
   {
    "fieldname": "allow_to_roles",
@@ -23,7 +21,7 @@
    "options": "Role List"
   }
  ],
- "modified": "2020-12-09 16:04:39.054637",
+ "modified": "2020-12-09 18:18:19.979696",
  "modified_by": "Administrator",
  "module": "Sales Order Role Based Hold Restrictions",
  "name": "Hold Permissions",
