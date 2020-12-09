@@ -1,0 +1,35 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Custom Script",
+  "dt": "Sales Order",
+  "modified": "2020-12-09 23:09:27.576522",
+  "name": "Sales Order-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on(\"Sales Order\", {\r\n\tonload: function(frm) {\r\n        frappe.call({\r\n            method:\"sales_order_role_based_hold_restrictions.sales_order_role_based_hold_restrictions.doctype.hold_permissions.hold_permissions.get_roles\",\r\n            args:{\"docname\":frm.doctype},\r\n            callback:function(r){\r\n                console.log(r.message)\r\n                if(r.message){\r\n                    if(! has_common(frappe.user_roles, r.message)) {\r\n                        console.log(\"in if\")\r\n\t\t\t\t\t\t\t// hold\r\n\t\t\t\t\t\t\tfrm.remove_custom_button(\"Hold\", 'Status');\r\n                            // close\r\n                            frm.remove_custom_button(__('Close'), __(\"Status\"))\r\n\t\t\t\t\t\t} \r\n                }\r\n               \r\n            }\r\n        })\r\n\t}\r\n});"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Script",
+  "dt": "Sales Invoice",
+  "modified": "2020-12-09 23:20:32.884522",
+  "name": "Sales Invoice-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on(\"Sales Invoice\",{\r\n    onload:function(frm){\r\n        frappe.call({\r\n            method:\"sales_order_role_based_hold_restrictions.sales_order_role_based_hold_restrictions.doctype.hold_permissions.hold_permissions.get_roles\",\r\n            args:{\"docname\":frm.doctype},\r\n            callback:function(r){\r\n                if(r.message){\r\n                    console.log(r.message)\r\n                    if(!has_common(frappe.user_roles, r.message)) {\r\n\t\t\t\t\t\t\t// hold\r\n\t\t\t\t\t\t\tfrm.remove_custom_button(__('Hold'), __(\"Status\"))\r\n                            // close\r\n                            frm.remove_custom_button(__('Close'), __(\"Status\"))\r\n\t\t\t\t\t\t}\r\n                }\r\n            }\r\n        })\r\n     }\r\n    }\r\n)\r\n"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Custom Script",
+  "dt": "Purchase Order",
+  "modified": "2020-12-09 23:17:59.188830",
+  "name": "Purchase Order-Client",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "script": "frappe.ui.form.on(\"Purchase Order\",{\r\n    onload:function(frm){\r\n        frappe.call({\r\n            method:\"sales_order_role_based_hold_restrictions.sales_order_role_based_hold_restrictions.doctype.hold_permissions.hold_permissions.get_roles\",\r\n            args:{\"docname\":frm.doctype},\r\n            callback:function(r){\r\n                if(r.message){\r\n                    console.log(r.message)\r\n                    if(!has_common(frappe.user_roles, r.message)) {\r\n\t\t\t\t\t\t\t// hold\r\n\t\t\t\t\t\t\tconsole.log( has_common(frappe.user_roles, r.message))\r\n\t\t\t\t\t\t\tfrm.remove_custom_button(__('Hold'), __(\"Status\"))\r\n                            // close\r\n                            frm.remove_custom_button(__('Close'), __(\"Status\"))\r\n\t\t\t\t\t\t}else{console.log(\"in else\")}\r\n                }\r\n            }\r\n        })\r\n     }\r\n    }\r\n)"
+ }
+]
